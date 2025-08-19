@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
+import BotaoNav from '../components/BotaoNav';
 
 function TelaFavoritos({navigation}) {
   return (
     <View style={styles.view}>
       <Text style={styles.text}>Favoritos</Text>
-      <Button title='Voltar para a tela principal' onPress={() => navigation.goBack()}/>
+      <BotaoNav title={'voltar'} onPress={() => navigation.goBack()}/>
     </View>
   )
 }

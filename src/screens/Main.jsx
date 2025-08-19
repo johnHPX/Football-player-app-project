@@ -1,12 +1,13 @@
 import { View, Text, StyleSheet,Button } from 'react-native';
+import BotaoNav from '../components/BotaoNav';
 
 
 function TelaMain({navigation}) {
   return (
     <View style={styles.view}>
       <Text style={styles.text}>Tela principal</Text>
-      <Button title='Ir para favoritos' onPress={() => navigation.navigate('Favoritos')}/>
-      <Button title='Voltar para a tela de Login' onPress={() => navigation.goBack()}/>
+      <BotaoNav title={'favoritos'} onPress={() => navigation.navigate('Favoritos')}/>
+      <BotaoNav title={'Sair'} onPress={() => navigation.goBack()}/>
     </View>
   )
 }
