@@ -4,7 +4,7 @@ import BotaoNav from '../components/BotaoNav';
 function TelaFavoritos({navigation}) {
   return (
     <View style={styles.view}>
-      <Text style={styles.text}>Favoritos</Text>
+      <Text style={styles.text}>Meus Favoritos</Text>
       <BotaoNav title={'voltar'} onPress={() => navigation.goBack()}/>
     </View>
   )
@@ -14,11 +14,15 @@ function TelaFavoritos({navigation}) {
 const styles = StyleSheet.create({
 
   view: {
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#F9FAFB'
   },
 
   text: {
-    color: 'red'
+    color: '#10B981',
+    fontSize: 25,
+    textAlign: "center",
+    marginTop: 10,
+    marginBottom: 20
   }
 
 })
