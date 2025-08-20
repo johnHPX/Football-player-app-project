@@ -25,7 +25,7 @@ function TelaMain({navigation}) {
       </View>
 
       <ScrollView style={styles.scroll}>
-        <CardAtleta nome={"Cristiano Ronaldo"} time={"Al Nassr FC"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Portugal"} data={"1985-02-05"}/>
+        <CardAtleta nome={"Cristiano Ronaldo"} time={"Al Nassr FC"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Portugal"} data={"1985-02-05"} isFavorito={true}/>
         <CardAtleta nome={"Lionel Messi"} time={"Inter Miami"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Argentina"} data={"1987-06-24"}/>
         <CardAtleta nome={"Neymar Jr"} time={"Al-Hilal"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Brasil"} data={"1992-02-05"}/>
       </ScrollView>
