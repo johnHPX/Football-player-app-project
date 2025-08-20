@@ -1,13 +1,24 @@
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
 import BotaoNav from '../components/BotaoNav';
+import { useState } from 'react';
 
 function TelaMain({navigation}) {
+  const [name, setName] = useState("")
+
+
   return (
     <View style={styles.screen}>
       <Image source={require("../assets/bg.jpg")} style={styles.img} />
       <View style={styles.div}>
         <Text style={styles.text}>Pesquise Pelo Nome </Text>
-        <TextInput style={styles.find} placeholder="Buscar jogador"/>
+
+        <TextInput
+          style={styles.find}
+          placeholder="Buscar jogador"
+          value={name}
+          onChangeText={(text) => setName(text)}
+        />
+
         <View style={styles.fix}>
           <BotaoNav title={'favoritos'} onPress={() => navigation.navigate('Favoritos')}/>
         </View>
