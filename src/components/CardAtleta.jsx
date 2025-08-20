@@ -24,12 +24,14 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",   
     alignItems: "center",   
-    padding: 10,
+    marginBottom: 10,
+    padding: 10,       
+    minHeight: 120,
     marginVertical: 5,
     backgroundColor: "#F3F4F6",
     borderRadius: 5,
     borderColor: "#E5E7EB",
-    borderWidth: 1
+    borderWidth: 1,
   },
 
   img: {
