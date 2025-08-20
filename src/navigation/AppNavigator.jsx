@@ -13,8 +13,14 @@ export default function AppNavigator() {
           headerStyle: { backgroundColor: "#a5c3a7" },
           headerTintColor: "#fff",
         }}/>
-        <Stack.Screen name='Favoritos' component={TelaFavoritos} />
-        <Stack.Screen name='Main' component={TelaMain} />
+        <Stack.Screen name='Favoritos' component={TelaFavoritos} options={{
+          headerStyle: { backgroundColor: "#a5c3a7" },
+          headerTintColor: "#fff",
+        }}/>
+        <Stack.Screen name='Main' component={TelaMain} options={{
+          headerStyle: { backgroundColor: "#a5c3a7" },
+          headerTintColor: "#fff",
+        }}/>
     </Stack.Navigator>
   );
 }

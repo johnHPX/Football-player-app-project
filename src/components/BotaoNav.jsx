@@ -1,7 +1,7 @@
 import { Text, TouchableHighlight, StyleSheet } from "react-native"
 
 
-function BotaoNav({title, onPress}) {
+function BotaoNav({title, onPress, style}) {
   return (
     <TouchableHighlight style={styles.container} onPress={onPress}>
       <Text style={styles.txt}>{title}</Text>

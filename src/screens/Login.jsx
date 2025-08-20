@@ -17,7 +17,7 @@ function TelaLogin({navigation}) {
 const styles = StyleSheet.create({
 
   view: {
-    backgroundColor: '#F8F4C4',
+    backgroundColor: '#F9FAFB',
     flex: 1,
     flexDirection: "column",
     justifyContent: 'center',
