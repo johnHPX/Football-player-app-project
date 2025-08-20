@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
 import BotaoNav from '../components/BotaoNav';
 import { useState } from 'react';
+import BotaoSubmit from '../components/BotaoSubmit';
+import CardAtleta from '../components/CardAtleta'
 
 function TelaMain({navigation}) {
   const [name, setName] = useState("")
@@ -9,7 +11,7 @@ function TelaMain({navigation}) {
   return (
     <View style={styles.screen}>
       <Image source={require("../assets/bg.jpg")} style={styles.img} />
-      <View style={styles.div}>
+      <View>
         <Text style={styles.text}>Pesquise Pelo Nome </Text>
 
         <TextInput
@@ -18,11 +20,20 @@ function TelaMain({navigation}) {
           value={name}
           onChangeText={(text) => setName(text)}
         />
+        
+        <BotaoSubmit title={'Buscar'} />
 
-        <View style={styles.fix}>
-          <BotaoNav title={'favoritos'} onPress={() => navigation.navigate('Favoritos')}/>
+        <View style={styles.divAjust}>
+          <CardAtleta nome={"Cristiano Ronaldo"} time={"Al Nassr FC"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Portugal"} data={"1985-02-05"}/>
         </View>
-        <BotaoNav title={'Sair'} onPress={() => navigation.goBack()}/>
+
+
+        <View>
+          <View style={styles.fixBTN}>
+            <BotaoNav title={'favoritos'} onPress={() => navigation.navigate('Favoritos')}/>
+          </View>
+          <BotaoNav title={'Sair'} onPress={() => navigation.goBack()}/>
+        </View>
       </View>
     </View>
   )
@@ -36,10 +47,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-
   img: {
       width: "100%",
-      height: 200,
+      height: 100,
       marginBottom: "2%"
   },
 
@@ -64,9 +74,16 @@ const styles = StyleSheet.create({
       marginBottom: "5%"
   },
 
-  fix: {
+  divAjust: {
+    marginTop: "10%",
+    marginBottom: "10%"
+  },
+
+  fixBTN: {
+    marginTop: "5%",
     marginBottom: "5%"
   }
+
 
 })
 

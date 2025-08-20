@@ -1,7 +1,7 @@
 import { Text, TouchableHighlight, StyleSheet } from "react-native"
 
 
-function BotaoNav({title, onPress}) {
+function BotaoSubmit({title, onPress}) {
   return (
     <TouchableHighlight style={styles.container} onPress={onPress}>
       <Text style={styles.txt}>{title}</Text>
@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 10,
     paddingBottom: 10,
-    backgroundColor: "#77B885",
-    width: "40%",
+    backgroundColor: "#3B82F6",
+    width: "60%",
     alignSelf: "center",
     borderRadius: 10,
     elevation: 5
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default BotaoNav;
+export default BotaoSubmit;

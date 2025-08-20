@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet,Button, TextInput } from 'react-native';
 import BotaoNav from '../components/BotaoNav';
+import BotaoSubmit from '../components/BotaoSubmit';
 
 
 function TelaLogin({navigation}) {
@@ -8,7 +9,7 @@ function TelaLogin({navigation}) {
       <Text style={styles.text}>Entre com sua conta</Text>
       <TextInput style={styles.email} placeholder="Email"/>
       <TextInput style={styles.password} placeholder="Senha"/>
-      <BotaoNav title={"Entrar"} onPress={() => navigation.navigate('Main') } />
+      <BotaoSubmit title={"Entrar"} onPress={() => navigation.navigate('Main') }/>
     </View>
   )
 }
