@@ -1,11 +1,36 @@
-import { View, Text, StyleSheet, Image, TextInput, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, ScrollView, FlatList } from 'react-native';
 import BotaoNav from '../components/BotaoNav';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BotaoSubmit from '../components/BotaoSubmit';
 import CardAtleta from '../components/CardAtleta'
 
+import {searchPlayers} from '../services/player'
+
 function TelaMain({navigation}) {
-  const [name, setName] = useState("")
+  const [name, setName] = useState(null)
+  const [value, setValue] = useState(null)
+  const [players, setPlayers] = useState([])
+  
+  useEffect(() => {
+
+    if (value === null){
+      return
+    }
+
+    async function analiseData() {
+        try{
+          const dados = await searchPlayers(value)
+          setPlayers(dados)
+        }catch (err){
+            console.log(`Erro: ${err}`)
+        }
+    }
+
+    analiseData()
+
+    console.log(players)
+
+  }, [value])
 
   return (
     <View style={styles.screen}>
@@ -21,14 +46,20 @@ function TelaMain({navigation}) {
           onChangeText={(text) => setName(text)}
         />
         
-        <BotaoSubmit title={'Buscar'} />
+        <BotaoSubmit title={'Buscar'}  onPress={() => {setValue(name)}}/>
       </View>
 
       <ScrollView style={styles.scroll}>
-        <CardAtleta nome={"Cristiano Ronaldo"} time={"Al Nassr FC"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Portugal"} data={"1985-02-05"} isFavorito={true}/>
-        <CardAtleta nome={"Lionel Messi"} time={"Inter Miami"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Argentina"} data={"1987-06-24"}/>
-        <CardAtleta nome={"Neymar Jr"} time={"Al-Hilal"} esporte={"Soccer"} sexo={"Male"} nacionalidade={"Brasil"} data={"1992-02-05"}/>
+          
       </ScrollView>
+
+      <FlatList
+        data={players}
+        keyExtractor={(item) => item.idPlayer}
+        renderItem={({ item }) => <CardAtleta item={item} isFavorito={false} />}
+      >
+
+      </FlatList>
 
 
       <View style={styles.footer}>

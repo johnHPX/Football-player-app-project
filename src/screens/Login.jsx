@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet,Button, TextInput } from 'react-native';
-import BotaoNav from '../components/BotaoNav';
 import BotaoSubmit from '../components/BotaoSubmit';
 
 
 function TelaLogin({navigation}) {
+
   return (
     <View style={styles.view}>
       <Text style={styles.text}>Entre com sua conta</Text>

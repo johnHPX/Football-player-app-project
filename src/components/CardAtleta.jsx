@@ -1,23 +1,23 @@
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 
-function CardAtleta({ nome, time, esporte, sexo, nacionalidade, data, isFavorito }) {
+function CardAtleta({ item, isFavorito }) {
   return (
     <View style={styles.container}>
 
       <View style={styles.divSec}>
 
         <Image
-          source={{ uri: "https://r2.thesportsdb.com/images/media/player/cutout/33f8ra1732561552.png" }}
+          source={{ uri: item.strCutout }}
           style={styles.img}
         />
 
         <View style={styles.info}>
-          <Text style={styles.txt}>Nome: {nome} </Text>
-          <Text style={styles.txt}>Time: {time}</Text>
-          <Text style={styles.txt}>Esporte: {esporte}</Text>
-          <Text style={styles.txt}>Sexo: {sexo}</Text>
-          <Text style={styles.txt}>Nacionalidade: {nacionalidade}</Text>
-          <Text style={styles.txt}>Data de Nascimento: {data}</Text>
+          <Text style={styles.txt}>Nome: {item.strPlayer} </Text>
+          <Text style={styles.txt}>Time: {item.strTeam}</Text>
+          <Text style={styles.txt}>Esporte: {item.strSport}</Text>
+          <Text style={styles.txt}>Sexo: {item.strGender}</Text>
+          <Text style={styles.txt}>Nacionalidade: {item.strNationality}</Text>
+          <Text style={styles.txt}>Data de Nascimento: {item.dateBorn}</Text>
         </View>
 
       </View>
