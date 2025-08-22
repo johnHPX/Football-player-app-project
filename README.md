@@ -4,8 +4,6 @@ Nesta versão para Android e IOS, foram feitas melhorias em relação a versão 
 
 ## Imagens
 
-## Configurações iniciais
-
 <img src="assets/img1.png" alt="tela inicial (sem busca)" width="400"/>
 <br/>
 <br/>
