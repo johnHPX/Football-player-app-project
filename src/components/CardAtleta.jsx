@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 
-function CardAtleta({ item, isFavorito }) {
+function CardAtleta({ item, btn }) {
   return (
     <View style={styles.container}>
 
       <View style={styles.divSec}>
 
-        <Image
-          source={{ uri: item.strCutout }}
-          style={styles.img}
-        />
+        {
+          item.strCutout? <Image source={{ uri: item.strCutout }} style={styles.img}/> : <Image source={require("../assets/defaultImage.png")} style={styles.img}/>
+        }
+        
 
         <View style={styles.info}>
           <Text style={styles.txt}>Nome: {item.strPlayer} </Text>
@@ -22,12 +22,8 @@ function CardAtleta({ item, isFavorito }) {
 
       </View>
 
-      {isFavorito
-        ? <Button title="Desfavoritar" color={"#10B981"}/>
-        : <Button title="Favoritar" color={"#9CA3AF"}/>
-      }
+      <Button title={btn.title} color={btn.color} onPress={() => btn.onPress()}/>
 
-      
     </View>
   );
 }

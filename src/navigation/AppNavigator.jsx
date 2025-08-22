@@ -1,5 +1,5 @@
 import TelaLogin from '../screens/Login';
-import TelaFavoritos from '../screens/Favoritos';
+import TelaFavoritos from '../screens/PainelFavoritos';
 import TelaMain from '../screens/Main'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
