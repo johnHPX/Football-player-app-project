@@ -98,7 +98,6 @@ function TelaMain({navigation}) {
       <View style={styles.footer}>
          <BotaoNav title={'Favoritos'} onPress={() => navigation.navigate('Favoritos')}/>
           <Text style={styles.fixBTN}></Text>
-         <BotaoNav title={'Sair'} onPress={() => navigation.goBack()}/>
       </View>
 
     </View>

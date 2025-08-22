@@ -1,6 +1,6 @@
-import TelaLogin from '../screens/Login';
 import TelaFavoritos from '../screens/PainelFavoritos';
 import TelaMain from '../screens/Main'
+import TelaDetalhesJogador from '../screens/DetalhesJogador';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator()
 export default function AppNavigator() {
   return (
     <Stack.Navigator>
-        <Stack.Screen name='Login' component={TelaLogin} options={{
+        <Stack.Screen name='Main' component={TelaMain} options={{
           headerStyle: { backgroundColor: "#a5c3a7" },
           headerTintColor: "#fff",
         }}/>
@@ -17,7 +17,7 @@ export default function AppNavigator() {
           headerStyle: { backgroundColor: "#a5c3a7" },
           headerTintColor: "#fff",
         }}/>
-        <Stack.Screen name='Main' component={TelaMain} options={{
+        <Stack.Screen name='Detalhes' component={TelaDetalhesJogador} options={{
           headerStyle: { backgroundColor: "#a5c3a7" },
           headerTintColor: "#fff",
         }}/>
